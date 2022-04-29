@@ -140,6 +140,9 @@ def map(fn):
         function : A function that takes a list, applies `fn` to each element, and returns a
         new list
     """
+    # def _map(ls):
+    #     return [fn(i) for i in ls]
+    # return _map
     return lambda x: [fn(i) for i in x]
 
 
@@ -164,13 +167,12 @@ def zipWith(fn):
         applying fn(x, y) on each pair of elements.
 
     """
-    # TODO: Implement for Task 0.3.
+    # return lambda x, y: [fn(x[i], y[i]) for i in range(len(x))]
     return lambda x, y: [fn(i, j) for (i, j) in zip(x, y)]
 
 
 def addLists(ls1, ls2):
     "Add the elements of `ls1` and `ls2` using :func:`zipWith` and :func:`add`"
-    # TODO: Implement for Task 0.3.
     return zipWith(add)(ls1, ls2)
 
 
